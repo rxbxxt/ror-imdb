@@ -7,8 +7,11 @@ gem "rails", "~> 7.0.4"
 gem 'pg', '~> 1.4', '>= 1.4.5'
 gem "puma", "~> 5.0"
 gem 'devise', '~> 4.8', '>= 4.8.1'
+gem 'sassc-rails', '>= 2.1.0'
+gem 'bootstrap', '~> 5.2.2'
+gem 'jquery-rails'
+gem "sprockets-rails", ">= 2.3.2"
 
-gem "sprockets-rails"
 gem "importmap-rails"
 gem "turbo-rails"
 gem "stimulus-rails"
