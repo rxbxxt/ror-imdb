@@ -1,8 +1,13 @@
-<h1>New movie</h1>
+<!-- <div class="card border-dark text-center text-bg-light m-2"> -->
+<div class="card-header text-center text-bg-dark rounded-4">
+  <h1>New movie</h1>
+</div>
 
-<%= render "form", movie: @movie %>
-
-<br>
+<div class="card border-dark text-bg-dark rounded-4">
+  <div class="card-body">
+    <%= render "form", movie: @movie %>
+  </div>
+</div>
 
 <div>
   <%= link_to "Back to movies", movies_path %>
