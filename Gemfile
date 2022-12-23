@@ -6,6 +6,7 @@ ruby "3.0.0"
 gem "rails", "~> 7.0.4"
 gem 'pg', '~> 1.4', '>= 1.4.5'
 gem "puma", "~> 5.0"
+gem 'devise', '~> 4.8', '>= 4.8.1'
 
 gem "sprockets-rails"
 gem "importmap-rails"
