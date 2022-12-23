@@ -1,1 +1,45 @@
-<h1>Hello</h1>
+<nav class="navbar navbar-dark navbar-expand-lg bg-dark">
+
+    <div class="container">
+
+      <%= link_to "Moviez", root_path, class: "navbar-brand" %>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+        <ul class="navbar-nav w-100 d-flex justify-content-between">
+
+          <% if user_signed_in? %>
+
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <%= current_user.email %>
+              </a>
+              <ul class="dropdown-menu dropdown-menu-dark">
+                <li><%= link_to "Settings", edit_user_registration_path, class: "dropdown-item" %></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><%= link_to "Sign Out", destroy_user_session_path, method: :delete, class: "dropdown-item" %></li>
+              </ul>
+            </li>
+
+          <% else %>
+
+            <div class="d-flex">
+              <li class="nav-item">
+                <%= link_to "Sign In", new_user_session_path, class: "nav-link" %>
+              </li>
+              <li class="nav-item">
+                <%= link_to "Sign Up", new_user_registration_path, class: "nav-link" %>
+              </li>
+            </div>
+
+          <% end %>
+        </ul>
+      </div>
+
+    </div>
+
+</nav>
