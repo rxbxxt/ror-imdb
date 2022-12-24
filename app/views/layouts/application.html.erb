@@ -10,10 +10,17 @@
 
   <body class="bg-dark">
     <%= render "layouts/header" %>
+
+
     <div class="container">
+      <% if notice %>
+        <%= render "layouts/alerts" %>
+      <% end %>
+
       <div class="bg-light mt-2 rounded-4 p-2">
         <%= yield %>
       </div>
     </div>
+
   </body>
 </html>
