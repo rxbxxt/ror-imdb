@@ -12,31 +12,31 @@
   <% end %>
 
   <div>
-    <%= form.label :title, style: "display: block" %>
-    <%= form.text_field :title %>
+    <%= form.text_field :title, class: "form-control", placeholder: "Title" %>
   </div>
 
   <div>
-    <%= form.label :description, style: "display: block" %>
-    <%= form.text_area :description %>
+    <%= form.text_area :description, class: "form-control", placeholder: "Description" %>
   </div>
 
   <div>
-    <%= form.label :director, style: "display: block" %>
-    <%= form.text_field :director %>
+    <%= form.text_field :director, class: "form-control", placeholder: "Director" %>
+  </div>
+<!--
+  <div>
+    <%= form.text_field :movie_length, class: "form-control", placeholder: "Movie length" %>
   </div>
 
   <div>
-    <%= form.label :movie_length, style: "display: block" %>
-    <%= form.text_field :movie_length %>
+    <%= form.text_field :rating, class: "form-control", placeholder: "rating" %>
+  </div>
+-->
+
+  <div>
+    <%= form.file_field :image, class: "form-control" %>
   </div>
 
   <div>
-    <%= form.label :rating, style: "display: block" %>
-    <%= form.text_field :rating %>
-  </div>
-
-  <div>
-    <%= form.submit %>
+    <%= form.submit class: "btn btn-dark btn-sm"%>
   </div>
 <% end %>
