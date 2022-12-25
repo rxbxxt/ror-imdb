@@ -12,6 +12,7 @@ gem 'bootstrap', '~> 5.2.2'
 gem 'jquery-rails'
 gem "sprockets-rails", ">= 2.3.2"
 gem "image_processing", ">= 1.2"
+gem 'kaminari'
 
 gem "importmap-rails"
 gem "turbo-rails"

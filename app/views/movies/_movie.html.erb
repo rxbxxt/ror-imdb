@@ -1,38 +1,21 @@
 <div id="<%= dom_id movie %>">
+  <% if movie.image.attached? %>
+    <%= image_tag movie.image, size: "250x250", class: "rounded-4 mt-1" %>
+  <% else %>
+    <svg class="bd-placeholder-img card-img-top rounded-4 mt-1" width="250" height="250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+      <title>Placeholder</title>
+      <rect width="100%" height="100%" fill="#868e96"/>
+      <text x="50%" y="50%" fill="#dee2e6">Thumbnail</text>
+    </svg>
+  <% end %>
 
-  <div class="card">
-    <% if movie.image.attached? %>
-      <p>
-      <%= image_tag movie.image %>
-      </p>
-    <% end %>
-    <div class="card-body">
-      <p>
-      <strong>Title:</strong>
-      <%= movie.title %>
-      </p>
+  <br/>
 
-      <p>
-      <strong>Director:</strong>
-      <%= movie.director %>
-      </p>
-    </div>
-  </div>
-  <!--
-    <p>
-    <strong>Description:</strong>
-    <%= movie.description %>
-    </p>
+  <strong><%= movie.title %></strong>
 
-    <p>
-    <strong>Movie length:</strong>
-    <%= movie.movie_length %>
-    </p>
+  <br/>
 
-    <p>
-    <strong>Rating:</strong>
-    <%= movie.rating %>
-    </p>
-  -->
+  <%= movie.director %>
+  
 
 </div>
