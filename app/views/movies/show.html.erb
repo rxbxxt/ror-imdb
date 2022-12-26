@@ -18,12 +18,16 @@
 <hr>
 
 <div>
-  <%= link_to "Edit this movie", edit_movie_path(@movie), class: "btn btn-dark btn-sm" %>
-  <%= link_to "Delete this movie", @movie, data: { "turbo_method": :delete, "turbo_confirm": "Are you sure?" }, class: "btn btn-dark btn-sm" %>
+  <% if user_signed_in? %>
+    <% if current_user.admin? %>
+      <%= link_to "Edit this movie", edit_movie_path(@movie), class: "btn btn-dark btn-sm" %>
+      <%= link_to "Delete this movie", @movie, data: { "turbo_method": :delete, "turbo_confirm": "Are you sure?" }, class: "btn btn-dark btn-sm" %>
+      <hr>
+    <% end %>
+  <% end %>
 </div>
 
-<em><%= "#{@reviews.length} reviews" %></em>
-
+<em><%= "#{@reviews.length} reviews" %></em> </br>
 <% if can_comment %>
   <%= link_to "Write Review", new_movie_review_path(@movie), class: "btn btn-warning" %>
 <% end %>
@@ -31,16 +35,23 @@
 <% if @reviews.blank? %>
   <h3>No reviews yet</h3>
 <% else %>
-  <% @reviews.each do |review| %>
-    <div class="reviews">
-      <div class="star-rating" data-score=<%= review.rating %>></div>
-
-      <p><%= review.comment %></p>
-      <% if user_signed_in? %>
-        <% if current_user.id == review.user_id %>
-          <%= link_to "Edit this review", edit_movie_review_path(@movie, review) %>
+    <% @reviews.each do |review| %>
+      <div class="mt-2">
+        <div class="d-flex justify-content-between">
+        <strong class="mx-3"><%= commentator(review) %></strong>
+        <% if user_signed_in? %>
+          <% if current_user.id == review.user_id %>
+            <%= link_to "Edit", edit_movie_review_path(@movie, review), class: "link-secondary mx-3" %>
+          <% end %>
         <% end %>
-      <% end %>
-    </div>
-  <% end %>
+        </div>
+
+        <div class="card border border-dark text-bg-light rounded-4 w-100 mt-1">
+          <div class="card-body">
+            <%= review.comment %>
+          </div>
+        </div>
+
+      </div>
+    <% end %>
 <% end %>

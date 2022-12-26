@@ -4,7 +4,9 @@
     <%= link_to "Moviez", root_path, class: "btn btn-dark fw-bold rounded-3 mx-2" %>
 
     <% if user_signed_in? %>
-      <%= link_to "New movie", new_movie_path, class: "btn btn-dark fw-bold rounded-3" %>
+      <% if current_user.admin? %>
+        <%= link_to "New movie", new_movie_path, class: "btn btn-dark fw-bold rounded-3" %>
+      <% end %>
     <% end %>
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
