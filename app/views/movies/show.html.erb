@@ -29,7 +29,7 @@
 
 <em><%= "#{@reviews.length} reviews" %></em> </br>
 <% if can_comment %>
-  <%= link_to "Write Review", new_movie_review_path(@movie), class: "btn btn-warning" %>
+  <%= link_to "Write Review", new_movie_review_path(@movie), class: "btn btn-dark" %>
 <% end %>
 
 <% if @reviews.blank? %>

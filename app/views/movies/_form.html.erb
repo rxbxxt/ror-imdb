@@ -16,27 +16,18 @@
   </div>
 
   <div>
-    <%= form.text_area :description, class: "form-control", placeholder: "Description" %>
+    <%= form.text_area :description, class: "form-control mt-2", placeholder: "Description" %>
   </div>
 
   <div>
-    <%= form.text_field :director, class: "form-control", placeholder: "Director" %>
-  </div>
-<!--
-  <div>
-    <%= form.text_field :movie_length, class: "form-control", placeholder: "Movie length" %>
+    <%= form.text_field :director, class: "form-control mt-2", placeholder: "Director" %>
   </div>
 
   <div>
-    <%= form.text_field :rating, class: "form-control", placeholder: "rating" %>
-  </div>
--->
-
-  <div>
-    <%= form.file_field :image, class: "form-control" %>
+    <%= form.file_field :image, class: "form-control mt-2" %>
   </div>
 
   <div>
-    <%= form.submit class: "btn btn-dark btn-sm"%>
+    <%= form.submit class: "btn btn-dark btn-sm mt-2"%>
   </div>
 <% end %>

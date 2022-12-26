@@ -5,7 +5,7 @@
 <div id="movies">
   <div class="d-flex justify-content-center">
     <% @movies.each do |movie| %>
-      <%= link_to (render movie), movie, class: "btn btn-outline-dark rounded-4 mx-2"%>
+      <%= link_to (render 'movies/card', movie: movie), movie, class: "btn btn-outline-dark rounded-4 mx-2" %>
     <% end %>
   </div>
 
@@ -13,4 +13,3 @@
     <%= paginate @movies %>
   </div>
 </div>
-
