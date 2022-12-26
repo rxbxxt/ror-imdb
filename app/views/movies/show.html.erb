@@ -28,8 +28,10 @@
 </div>
 
 <em><%= "#{@reviews.length} reviews" %></em> </br>
-<% if can_comment %>
-  <%= link_to "Write Review", new_movie_review_path(@movie), class: "btn btn-dark" %>
+<% if user_signed_in? %>
+  <% if can_comment %>
+    <%= link_to "Write Review", new_movie_review_path(@movie), class: "btn btn-dark" %>
+  <% end %>
 <% end %>
 
 <% if @reviews.blank? %>
@@ -48,6 +50,7 @@
 
         <div class="card border border-dark text-bg-light rounded-4 w-100 mt-1">
           <div class="card-body">
+            <div class="star-rating" data-score= <%= review.rating %> ></div>
             <%= review.comment %>
           </div>
         </div>
@@ -55,3 +58,13 @@
       </div>
     <% end %>
 <% end %>
+
+<script>
+  $('.star-rating').raty({
+    path: '/assets/',
+    readOnly: true,
+    score: function() {
+          return $(this).attr('data-score');
+    }
+  });
+</script>

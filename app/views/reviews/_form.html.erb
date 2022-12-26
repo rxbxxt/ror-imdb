@@ -12,16 +12,21 @@
   <% end %>
 
   <div>
-    <%= form.label :comment, style: "display: block" %>
-    <%= form.text_area :comment %>
+    <%= form.text_area :comment, class: "form-control", placeholder: "Review" %>
+  </div>
+
+  <div class="field">
+    <div id="star-rating"></div>
   </div>
 
   <div>
-    <%= form.label :rating, style: "display: block" %>
-    <%= form.number_field :rating %>
-  </div>
-
-  <div>
-    <%= form.submit %>
+    <%= form.submit class: "btn btn-dark btn-sm mt-2" %>
   </div>
 <% end %>
+
+<script>
+  $('#star-rating').raty({
+    path: '/assets/',
+    scoreName: 'review[rating]'
+  });
+</script>

@@ -1,5 +1,7 @@
-<h1>Editing review</h1>
+<div class="card-header text-center text-bg-dark rounded-4">
+  <h1>Editing review</h1>
+</div>
 
 <%= render "form", review: @review %>
 
-<%= link_to "Back to reviews", movie_path(@movie) %>
+<%= link_to "Back to reviews", movie_path(@movie), class: "link-secondary" %>
